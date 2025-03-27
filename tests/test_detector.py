@@ -15,7 +15,7 @@ def sample_data():
         "location_lon": [36.8219] * 6,
     }
     df = pd.DataFrame(data)
-    return convert_timestamp(df)  t
+    return convert_timestamp(df)  
 
 # Test for siphonage detection
 def test_detect_fuel_siphonage(sample_data):
