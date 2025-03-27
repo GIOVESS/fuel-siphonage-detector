@@ -10,43 +10,41 @@ This project detects **fuel siphonage events** from fleet telemetry logs. Fuel s
 git clone https://github.com/GIOVESS/fuel-siphonage-detector.git
 cd fuel-siphonage-detector
 ```
+## 2️⃣ Create a Virtual Environment & Install Dependencies
 
-### 2️⃣ Create a Virtual Environment & Install Dependencies
 ```bash
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the Detection Script
-```bash
-python app/main.py --file data/sample_fuel_telemetry.csv
-```
-
 ## How It Works
 1. Reads a telemetry log CSV file.
 2. Detects **fuel level drops** when the engine is OFF.
 3. Flags potential siphonage events.
-4. Outputs results to the console or a new CSV file.
+4. Outputs results to a new CSV file.
 
-## Running the Streamlit App 
+## Running the Streamlit App
+
 ```bash
+export PYTHONPATH=$(pwd)
 streamlit run app/main.py
 ```
 
 ## Running Tests
+
 ```bash
 pytest tests/test_detector.py
-
 ```
 
-## Example Output 
-| Vehicle ID | Timestamp        | Location Lat | Location Lon | Engine Status | Fuel Level (L) | Siphonage Flag |
-|------------|-----------------|--------------|--------------|--------------|----------------|----------------|
-| V1         | 3/25/2025 8:00  | -1.2921      | 36.8219      | OFF          | 60             | ❌              |
-| V2         | 3/25/2025 8:30  | -1.2921      | 36.8219      | OFF          | 40             | ✅              |
+## Example Output
+
+| Timestamp        | Vehicle ID | Fuel Drop (L) | Location Lat | Location Lon |  
+|-----------------|------------|--------------|--------------|--------------|  
+| 2025-03-25 08:30 | V1         | -6.0         | 1.2921       | 36.8219      |  
 
 ## 👨‍💻 Author
+
 **Giovanni Bwayo**  
-[GitHub](https://github.com/GIOVESS) | [LinkedIn](https://www.linkedin.com/in/giovannibwayo/)
+[LinkedIn](https://www.linkedin.com/in/giovannibwayo/)
 
