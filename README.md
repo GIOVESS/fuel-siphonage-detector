@@ -36,7 +36,8 @@ streamlit run app/main.py
 
 ## Running Tests
 ```bash
-pytest tests/
+pytest tests/test_detector.py
+
 ```
 
 ## Example Output 
