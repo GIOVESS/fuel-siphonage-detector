@@ -1,5 +1,5 @@
 import pandas as pd
-from app.utils import validate_dataframe, convert_timestamp  
+from utils import validate_dataframe, convert_timestamp  
 
 def detect_fuel_siphonage(df, fuel_drop_threshold=5.0):
     validate_dataframe(df)
